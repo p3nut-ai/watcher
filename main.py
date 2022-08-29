@@ -1,8 +1,10 @@
 import time
 from djitellopy import Tello
 from manual_drive import manual_drive
-from ai_flight import ai_flight
 from colorama import Fore
+from threading import Thread
+
+
 try:
     tello = Tello()
     tello.connect()
@@ -34,8 +36,6 @@ except Exception as e:
     quit()
 
 
-
-# let user pick
 print('''
         ------------------------------------
 
@@ -47,10 +47,41 @@ print('''
 
 user_choice = input('> ')
 
+
+
 if user_choice == '1':
     # call function from other py file
     manual_drive()
+    
 elif user_choice == '2':
-    ai_flight()
+    record = True
+    tello.streamon()
+    frame_read = tello.get_frame_read()
+
+    def ai_flight():
+
+
+        height, width, _ = frame.read.frame.shape
+
+        video = cv2.VideoWriter('video.avi', cv2.VideoWriter_fourcc(*'XVID'), 30, (width, height))
+
+        while record:
+            video.write(frame_read.frame)
+            time.sleep(1 / 30)
+        video.release()
+
+    recorder = Thread(target=ai_flight)
+    recorder.start()
+
+    tello.takeoff()
+    #tello.move_up(100)
+    tello.rotate_counter_clockwise(360)
+    tello.land()
+    #time.sleep(2)
+    record = False
+    recorder.join()
+
+
+
 else:
     print(Fore.RED + '[!] not in the choices [!]')
