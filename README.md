@@ -9,7 +9,7 @@ dji tello controlling with python
 ## Installation
 
 1. Clone the repository: `$ git clone https://github.com/p3nut-ai/watcher.git` or manually download it [here](https://github.com/p3nut-ai/watcher.git)
-2. Install the required Python packages: `$ pip install -r requirements.txt`
+2. Install the required Python packages: `$ pip install -r req.txt`
 3. Run main.py: `$ python main.py `
 
 # screenshot
