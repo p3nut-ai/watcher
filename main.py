@@ -73,13 +73,17 @@ elif user_choice == '2':
     recorder = Thread(target=ai_flight)
     recorder.start()
 
-    tello.takeoff()
-    #tello.move_up(100)
-    tello.rotate_counter_clockwise(360)
-    tello.land()
-    #time.sleep(2)
-    record = False
-    recorder.join()
+    if tello.get_battery() < 20:
+        print(Fore.YELLOW + "[!] WARNING! [!]")
+        print(Fore.RED + "[!] Battery is low [!]")
+    else:
+        tello.takeoff()
+        #tello.move_up(100)
+        tello.rotate_counter_clockwise(360)
+        tello.land()
+        #time.sleep(2)
+        record = False
+        recorder.join()
 
 
 
