@@ -18,3 +18,6 @@ dji tello controlling with python
 
 # Credits
 - https://github.com/damiafuentes/DJITelloPy
+
+# Task
+- add feature to manual drive
