@@ -12,6 +12,9 @@ dji tello controlling with python
 2. Install the required Python packages: `$ pip install -r req.txt`
 3. Run main.py: `$ python main.py `
 
-# screenshot
+# Screenshot
 - after running python main.py you should see it on your screen. 
 ![image](https://user-images.githubusercontent.com/49468484/187116579-71f2378d-6e3a-4a28-b1b1-59e1f1648299.png)
+
+# Credits
+- https://github.com/damiafuentes/DJITelloPy
