@@ -3,7 +3,7 @@ from djitellopy import Tello
 from manual_drive import manual_drive
 from colorama import Fore
 from threading import Thread
-
+import cv2
 
 try:
     tello = Tello()
@@ -61,7 +61,7 @@ elif user_choice == '2':
     def ai_flight():
 
 
-        height, width, _ = frame.read.frame.shape
+        height, width, _ = frame_read.frame.shape
 
         video = cv2.VideoWriter('video.avi', cv2.VideoWriter_fourcc(*'XVID'), 30, (width, height))
 
