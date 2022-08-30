@@ -21,3 +21,4 @@ dji tello controlling with python
 
 # Task
 - add feature to manual drive
+- add machine vision
